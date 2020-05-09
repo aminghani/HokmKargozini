@@ -12,13 +12,13 @@ public class Employee {
     JobLocationInfo jobLocationInfo;
     MarriageInfo marriageInfo;
     ShenasnameInfo shenasnameInfo;
-    Date savabegKhedmat;
+    String savabegKhedmat;
     String vahedSazmani;
     String noeHokm;
 
     public Employee(PersonalInfo personalInfo, PostSazmani postSazmani, BirthAndDegreeInfo birthAndDegreeInfo,
                     HogogVaFogoladeHa hogogVaFogoladeHa, Isargari isargari, JobInfo jobInfo, JobLocationInfo jobLocationInfo,
-                    MarriageInfo marriageInfo, ShenasnameInfo shenasnameInfo, Date savabegKhedmat, String vahedSazmani, String noeHokm) {
+                    MarriageInfo marriageInfo, ShenasnameInfo shenasnameInfo, String savabegKhedmat, String vahedSazmani, String noeHokm) {
         this.personalInfo = personalInfo;
         this.postSazmani = postSazmani;
         this.birthAndDegreeInfo = birthAndDegreeInfo;
@@ -109,11 +109,11 @@ public class Employee {
         this.shenasnameInfo = shenasnameInfo;
     }
 
-    public Date getSavabegKhedmat() {
+    public String getSavabegKhedmat() {
         return savabegKhedmat;
     }
 
-    public void setSavabegKhedmat(Date savabegKhedmat) {
+    public void setSavabegKhedmat(String savabegKhedmat) {
         this.savabegKhedmat = savabegKhedmat;
     }
 

@@ -3,9 +3,9 @@ import Employee.Isargari;
 
 import java.sql.*;
 public class IsargariAndMarriageInfoTable extends TableConnection {
-    String tableName = "isargariAndMarriage";
 
     public IsargariAndMarriageInfoTable(){
+        tableName = "isargariAndMarriage";
         createTableIfNotExist();
     }
 
@@ -31,7 +31,7 @@ public class IsargariAndMarriageInfoTable extends TableConnection {
         }
     }
 
-    public boolean insertOne(Isargari.VaziatIsargari vaziatisargari, boolean vaziattaahol, int tedadfarzand){
+    public boolean insertOne(String vaziatisargari, boolean vaziattaahol, int tedadfarzand){
         if(vaziattaahol == false && tedadfarzand > 0){
             return false;
         }

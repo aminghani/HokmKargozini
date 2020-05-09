@@ -3,9 +3,9 @@ import Employee.JobLocationInfo;
 
 import java.sql.*;
 public class JobAndJobLocationInfoTable extends TableConnection {
-    String tableName = "JobInfoTable";
 
     public JobAndJobLocationInfoTable(){
+        tableName = "JobInfoTable";
         createTableIfNotExist();
     }
 

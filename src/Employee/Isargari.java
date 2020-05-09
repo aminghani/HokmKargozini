@@ -1,10 +1,17 @@
 package Employee;
 
 public class Isargari {
-    public enum VaziatIsargari {NONE , JANBAZ , RAZMANDE , AZADE , SHAHED }
-    VaziatIsargari vaziatIsargari;
+    String vaziatIsargari;
 
-    public Isargari(Isargari.VaziatIsargari vaziatIsargari) {
+    public Isargari(String vaziatIsargari) {
+        this.vaziatIsargari = vaziatIsargari;
+    }
+
+    public String getVaziatIsargari() {
+        return vaziatIsargari;
+    }
+
+    public void setVaziatIsargari(String vaziatIsargari) {
         this.vaziatIsargari = vaziatIsargari;
     }
 }

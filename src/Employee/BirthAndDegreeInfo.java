@@ -3,13 +3,12 @@ package Employee;
 import java.util.Date;
 
 public class BirthAndDegreeInfo {
-    public enum Madrak  {DIPLOM , FOGDIPLOM , LISANS , FOGLISANS , DOCTORA}
     String mahaleTavalod;
-    Date tarikhTavalod;
-    Madrak madrak;
+    String tarikhTavalod;
+    String madrak;
     String reshte;
 
-    public BirthAndDegreeInfo(String mahaleTavalod, Date tarikhTavalod, Madrak madrak, String reshte) {
+    public BirthAndDegreeInfo(String mahaleTavalod, String tarikhTavalod, String madrak, String reshte) {
         this.mahaleTavalod = mahaleTavalod;
         this.tarikhTavalod = tarikhTavalod;
         this.madrak = madrak;
@@ -28,19 +27,19 @@ public class BirthAndDegreeInfo {
         this.mahaleTavalod = mahaleTavalod;
     }
 
-    public Date getTarikhTavalod() {
+    public String getTarikhTavalod() {
         return tarikhTavalod;
     }
 
-    public void setTarikhTavalod(Date tarikhTavalod) {
+    public void setTarikhTavalod(String tarikhTavalod) {
         this.tarikhTavalod = tarikhTavalod;
     }
 
-    public Madrak getMadrak() {
+    public String getMadrak() {
         return madrak;
     }
 
-    public void setMadrak(Madrak madrak) {
+    public void setMadrak(String madrak) {
         this.madrak = madrak;
     }
 

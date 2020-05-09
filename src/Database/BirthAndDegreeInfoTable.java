@@ -1,15 +1,16 @@
 package Database;
 
 import Employee.BirthAndDegreeInfo;
+import com.sun.glass.ui.Window;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
 public class BirthAndDegreeInfoTable extends TableConnection {
-    final String tableName = "birthanddegree";
 
     public BirthAndDegreeInfoTable(){
+        tableName = "birthanddegree";
         createTableIfNotExist();
     }
     @Override
@@ -34,7 +35,7 @@ public class BirthAndDegreeInfoTable extends TableConnection {
         }
     }
 
-    public boolean insertOne(String mahaleTavalod, String tarikhTavalod, BirthAndDegreeInfo.Madrak madrak,
+    public boolean insertOne(String mahaleTavalod, String tarikhTavalod, String madrak,
             String reshte){
         openConnection();
         Statement statement = null;
@@ -55,6 +56,4 @@ public class BirthAndDegreeInfoTable extends TableConnection {
             }
         }
     }
-
-
 }

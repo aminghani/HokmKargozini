@@ -1,9 +1,9 @@
 package Database;
 import java.sql.*;
 public class PostSazmaniAndShenasnameTable extends TableConnection {
-    String tableName = "PostSazmaniAndShenasname";
 
     public PostSazmaniAndShenasnameTable(){
+        tableName = "PostSazmaniAndShenasname";
         createTableIfNotExist();
     }
 

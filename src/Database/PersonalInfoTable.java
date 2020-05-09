@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonalInfoTable extends TableConnection{
-    String tableName = "personalinfo";
 
     public PersonalInfoTable(){
+        tableName = "personalinfo";
         createTableIfNotExist();
     }
 
@@ -85,4 +85,63 @@ public class PersonalInfoTable extends TableConnection{
         }
     }
 
+    public String readPersonalInfo(int id){
+        openConnection();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        String firstName = null;String lastName = null;String fatherName = null;
+        String shomareMeli = null;String shomareMostakhdem = null;
+        try{
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM "+ tableName + " WHERE id = "+ id);
+            while (resultSet.next()){
+                firstName = resultSet.getString("firstname");
+                lastName = resultSet.getString("lastname");
+                fatherName = resultSet.getString("fathername");
+                shomareMeli = resultSet.getString("shomaremeli");
+                shomareMostakhdem = resultSet.getString("shomareMostakhdem");
+            }
+            if(firstName == null){
+                return "not found";
+            }
+            return "اسم : "+ firstName + "نام خانوادگی : "+lastName + " اسم پدر : "+ fatherName + " شماره ملی : "+shomareMeli+ " شماره مستخدم : "+shomareMostakhdem;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return "not found";
+        }finally {
+            try {
+                resultSet.close();
+                statement.close();
+                closeConnection();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    public int getRecordCounts(){
+        openConnection();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT firstname FROM "+ tableName);
+            int count = 0;
+            while (resultSet.next()){
+                count++;
+            }
+            return count;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return -1;
+        }finally {
+            try {
+                resultSet.close();
+                statement.close();
+                closeConnection();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
 }

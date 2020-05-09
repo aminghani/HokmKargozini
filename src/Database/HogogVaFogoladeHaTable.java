@@ -1,9 +1,9 @@
 package Database;
 import java.sql.*;
 public class HogogVaFogoladeHaTable extends TableConnection{
-    final String tableName = "hogogvafogolade";
 
     public HogogVaFogoladeHaTable(){
+        tableName = "hogogvafogolade";
         createTableIfNotExist();
     }
 
@@ -16,7 +16,7 @@ public class HogogVaFogoladeHaTable extends TableConnection{
                     "emtiazhageshoghl INT , emtiazfogolademodoriat INT , emtiazhageshaghel INT , emtiaztafavottatbig INT ," +
                     "emtiazmanategkamtartoseeyafte INT ,emtiazbadiabohava INT ,emtiazisargari INT ,emtiazneshanhayedolati INT ," +
                     "emtiazkhedmatdarmanategjangzade INT , emtiazsakhtisharayetkar INT , emtiazayelemandi INT ," +
-                    "emtiazhazineolad INT , emtiazfogoladeshoghl INT, PRIMARY KEY (id))");
+                    "emtiazhazineolad INT , emtiazfogoladeshoghl INT,zarib INT, PRIMARY KEY (id))");
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -58,9 +58,5 @@ public class HogogVaFogoladeHaTable extends TableConnection{
                 throwables.printStackTrace();
             }
         }
-
     }
-
-
-
 }

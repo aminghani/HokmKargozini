@@ -3,9 +3,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 public class OtherTable extends TableConnection {
-    String tableName = "other";
 
     public OtherTable(){
+        tableName = "other";
         createTableIfNotExist();
     }
 
@@ -31,7 +31,7 @@ public class OtherTable extends TableConnection {
         }
     }
 
-    public boolean insertOne(Date savabegkhedmat,String vahedsazmani,String noehokm){
+    public boolean insertOne(String savabegkhedmat,String vahedsazmani,String noehokm){
         openConnection();
         Statement statement = null;
         try {

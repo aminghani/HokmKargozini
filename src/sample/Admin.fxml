@@ -1,8 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="501.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin">
+   <top>
+      <AnchorPane prefHeight="54.0" prefWidth="701.0" style="-fx-background-color: #AABEBF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="showTimeLabel" layoutX="486.0" layoutY="15.0" prefHeight="25.0" prefWidth="208.0" textFill="WHITE" />
+         </children></AnchorPane>
+   </top>
+   <right>
+      <AnchorPane prefHeight="446.0" prefWidth="546.0" style="-fx-background-color: #E6E3D6;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="infoPane" prefHeight="447.0" prefWidth="529.0" visible="false">
+               <children>
+                  <Label layoutX="427.0" layoutY="41.0" prefHeight="17.0" prefWidth="75.0" text="تعداد کاربر" />
+                  <Label fx:id="userCountLabel" layoutX="330.0" layoutY="41.0" prefHeight="17.0" prefWidth="63.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="newUserSection" prefHeight="443.0" prefWidth="528.0" style="-fx-background-color: #E6E3D6;" visible="false">
+               <children>
+                  <Button layoutX="15.0" layoutY="302.0" mnemonicParsing="false" onAction="#birthInfoClicked" prefHeight="38.0" prefWidth="142.0" text="اطلاعات تولد و مدرک" textFill="#280000" />
+                  <Button layoutX="385.0" layoutY="349.0" mnemonicParsing="false" onAction="#hogogClicked" prefHeight="35.0" prefWidth="130.0" text="حقوق وفوق العاده ها" />
+                  <Button layoutX="169.0" layoutY="302.0" mnemonicParsing="false" onAction="#isargariClicked" prefHeight="38.0" prefWidth="134.0" text="ایثارگری و اطلاعات کار" />
+                  <Button layoutX="229.0" layoutY="347.0" mnemonicParsing="false" onAction="#marrigaeInfoClicked" prefHeight="38.0" prefWidth="147.0" text="محل کار و اطلاعات ازدواج" />
+                  <Button layoutX="15.0" layoutY="348.0" mnemonicParsing="false" onAction="#personalInfoClicked" prefHeight="36.0" prefWidth="203.0" text="اطلاعات شخصی و پست سازمانی" />
+                  <Button layoutX="14.0" layoutY="395.0" mnemonicParsing="false" onAction="#shenasnameInfoClicked" prefHeight="36.0" prefWidth="204.0" text="اطلاعات شناسنامه و بقیه" />
+                  <Button layoutX="223.0" layoutY="396.0" mnemonicParsing="false" onAction="#registerClicekd" prefHeight="35.0" prefWidth="292.0" text="ثبت کاربر" />
+                  <AnchorPane fx:id="BirthInfoPane" prefHeight="292.0" prefWidth="526.0" visible="false">
+                     <children>
+                        <Label layoutX="444.0" layoutY="14.0" prefHeight="17.0" prefWidth="68.0" text="محل تولد" />
+                        <TextField fx:id="birthLocTxt" layoutX="278.0" layoutY="10.0" />
+                        <Label layoutX="196.0" layoutY="11.0" prefHeight="24.0" prefWidth="82.0" text="تاریخ تولد" />
+                        <TextField fx:id="birthTxt" layoutX="21.0" layoutY="11.0" />
+                        <Label layoutX="444.0" layoutY="55.0" prefHeight="17.0" prefWidth="67.0" text="مدرک" />
+                        <TextField fx:id="degreeTxt" layoutX="278.0" layoutY="51.0" />
+                        <Label layoutX="196.0" layoutY="55.0" prefHeight="17.0" prefWidth="62.0" text="رشته" />
+                        <TextField fx:id="reshteTxt" layoutX="21.0" layoutY="51.0" />
+                        <Button layoutX="428.0" layoutY="253.0" mnemonicParsing="false" onAction="#sabtBirthBtn" prefHeight="25.0" prefWidth="84.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="isargariAndJobInfo" prefHeight="293.0" prefWidth="527.0" visible="false">
+                     <children>
+                        <Label layoutX="382.0" layoutY="21.0" prefHeight="17.0" prefWidth="128.0" text="وضعیت ایثارگری" />
+                        <TextField fx:id="isargariTxt" layoutX="235.0" layoutY="17.0" prefHeight="25.0" prefWidth="135.0" />
+                        <Label layoutX="181.0" layoutY="21.0" prefHeight="17.0" prefWidth="67.0" text="رسته" />
+                        <TextField fx:id="rasteTxt" layoutX="13.0" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" />
+                        <Label layoutX="389.0" layoutY="66.0" prefHeight="17.0" prefWidth="75.0" text="رشته شغلی" />
+                        <TextField fx:id="reshteShoghliTxt" layoutX="233.0" layoutY="62.0" />
+                        <Label layoutX="170.0" layoutY="66.0" prefHeight="17.0" prefWidth="55.0" text="طبقه شغل" />
+                        <TextField fx:id="tabageTxt" layoutX="11.0" layoutY="62.0" />
+                        <Label layoutX="399.0" layoutY="114.0" prefHeight="17.0" prefWidth="65.0" text="رتبه" />
+                        <TextField fx:id="rotbe" layoutX="235.0" layoutY="110.0" />
+                        <Button layoutX="399.0" layoutY="235.0" mnemonicParsing="false" onAction="#sabtIsargariBtn" prefHeight="36.0" prefWidth="105.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="hogogVaFogolade" prefHeight="297.0" prefWidth="527.0" visible="false">
+                     <children>
+                        <Label layoutX="451.0" layoutY="14.0" prefHeight="20.0" prefWidth="58.0" text="حق شغل" />
+                        <Label layoutX="331.0" layoutY="16.0" prefHeight="17.0" prefWidth="52.0" text="مدیریت" />
+                        <Label layoutX="209.0" layoutY="16.0" prefHeight="17.0" prefWidth="55.0" text="حق شاغل" />
+                        <Label layoutX="85.0" layoutY="16.0" text="تفاوت تطبیق" />
+                        <Label layoutX="440.0" layoutY="58.0" text="کمترتوسعه یافته" />
+                        <Label layoutX="331.0" layoutY="58.0" prefHeight="17.0" prefWidth="56.0" text="بدی ابوهوا" />
+                        <Label layoutX="208.0" layoutY="58.0" prefHeight="17.0" prefWidth="57.0" text="ایثارگری" />
+                        <Label layoutX="82.0" layoutY="58.0" prefHeight="17.0" prefWidth="77.0" text="نشانهای دولتی" />
+                        <Label layoutX="446.0" layoutY="102.0" prefHeight="17.0" prefWidth="69.0" text="مناطق محروم" />
+                        <Label layoutX="331.0" layoutY="102.0" prefHeight="17.0" prefWidth="59.0" text="سختی کار" />
+                        <Label layoutX="183.0" layoutY="102.0" prefHeight="17.0" prefWidth="71.0" text="عایله مندی" />
+                        <Label layoutX="451.0" layoutY="149.0" prefHeight="17.0" prefWidth="58.0" text="حق اولاد" />
+                        <Label layoutX="275.0" layoutY="149.0" prefHeight="17.0" prefWidth="97.0" text="فوق العاده شفل" />
+                        <TextField fx:id="hageShoghlTxt" layoutX="383.0" layoutY="12.0" prefHeight="25.0" prefWidth="54.0" />
+                        <TextField fx:id="modiriatTxt" layoutX="264.0" layoutY="12.0" prefHeight="25.0" prefWidth="63.0" />
+                        <TextField fx:id="hageShaghelTxt" layoutX="155.0" layoutY="12.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="tafavotTatbigTxt" layoutX="24.0" layoutY="12.0" prefHeight="25.0" prefWidth="58.0" />
+                        <TextField fx:id="kamtarToseeyafteTxt" layoutX="390.0" layoutY="54.0" prefHeight="25.0" prefWidth="41.0" />
+                        <TextField fx:id="badiAboHavaTxt" layoutX="264.0" layoutY="54.0" prefHeight="25.0" prefWidth="58.0" />
+                        <TextField fx:id="isargariEmtiazTxt" layoutX="157.0" layoutY="54.0" prefHeight="25.0" prefWidth="47.0" />
+                        <TextField fx:id="neshanHayeDolatiTxt" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="53.0" />
+                        <TextField fx:id="manategeMahromTxt" layoutX="389.0" layoutY="98.0" prefHeight="25.0" prefWidth="43.0" />
+                        <TextField fx:id="sakhtiKarTxt" layoutX="268.0" layoutY="98.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="ayelemandiTxt" layoutX="106.0" layoutY="98.0" prefHeight="25.0" prefWidth="75.0" />
+                        <TextField fx:id="hageOladTxt" layoutX="372.0" layoutY="145.0" prefHeight="25.0" prefWidth="65.0" />
+                        <TextField fx:id="fogoladeShoghl" layoutX="199.0" layoutY="145.0" prefHeight="25.0" prefWidth="65.0" />
+                        <Button layoutX="425.0" layoutY="238.0" mnemonicParsing="false" onAction="#sabtFogoladehaBtn" prefHeight="39.0" prefWidth="90.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="marriageInfoPane" prefHeight="297.0" prefWidth="530.0" visible="false">
+                     <children>
+                        <Label layoutX="394.0" layoutY="22.0" prefHeight="17.0" prefWidth="100.0" text="شهرستان خدمت" />
+                        <Label layoutX="173.0" layoutY="22.0" prefHeight="17.0" prefWidth="78.0" text="استان خدمت" />
+                        <Label layoutX="403.0" layoutY="66.0" prefHeight="17.0" prefWidth="82.0" text="نوع استخدام" />
+                        <Label layoutX="173.0" layoutY="66.0" prefHeight="17.0" prefWidth="78.0" text="وضعیت تاهل" />
+                        <Label layoutX="409.0" layoutY="109.0" prefHeight="17.0" prefWidth="70.0" text="تعداد فرزند" />
+                        <TextField fx:id="shahrestanTxt" layoutX="245.0" layoutY="18.0" prefHeight="25.0" prefWidth="142.0" />
+                        <TextField fx:id="ostanTxt" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="144.0" />
+                        <TextField fx:id="vaziatHaaholTxt" layoutX="12.0" layoutY="62.0" />
+                        <TextField fx:id="noeEstekhdamTxt" layoutX="242.0" layoutY="62.0" />
+                        <TextField fx:id="tedadFarzand" layoutX="242.0" layoutY="105.0" />
+                        <Button layoutX="416.0" layoutY="239.0" mnemonicParsing="false" onAction="#sabtMarriageInfoBtn" prefHeight="37.0" prefWidth="94.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="personalInfoPane" prefHeight="299.0" prefWidth="530.0" visible="false">
+                     <children>
+                        <Label layoutX="461.0" layoutY="26.0" prefHeight="17.0" prefWidth="45.0" text="نام" />
+                        <Label layoutX="215.0" layoutY="26.0" prefHeight="17.0" prefWidth="65.0" text="نام خانوادگی" />
+                        <Label layoutX="454.0" layoutY="67.0" prefHeight="17.0" prefWidth="59.0" text="نام پدر" />
+                        <Label layoutX="221.0" layoutY="68.0" prefHeight="17.0" prefWidth="70.0" text="شماره ملی" />
+                        <Label layoutX="442.0" layoutY="114.0" prefHeight="17.0" prefWidth="81.0" text="شماره مستخدم" />
+                        <Label layoutX="216.0" layoutY="114.0" prefHeight="17.0" prefWidth="63.0" text="رمز عبور" />
+                        <Label layoutX="439.0" layoutY="160.0" prefHeight="17.0" prefWidth="65.0" text="عنوان پست" />
+                        <Label layoutX="233.0" layoutY="160.0" prefHeight="17.0" prefWidth="46.0" text="شماره" />
+                        <TextField fx:id="lastNameTxt" layoutX="38.0" layoutY="22.0" />
+                        <TextField fx:id="nameTxt" layoutX="296.0" layoutY="22.0" />
+                        <TextField fx:id="shomareMeliTxt" layoutX="38.0" layoutY="63.0" />
+                        <TextField fx:id="fatherNameTxt" layoutX="296.0" layoutY="64.0" />
+                        <TextField fx:id="shomareMostakhdemTxt" layoutX="290.0" layoutY="110.0" />
+                        <TextField fx:id="passwordTxt" layoutX="38.0" layoutY="110.0" />
+                        <TextField fx:id="onvanPostTxt" layoutX="290.0" layoutY="156.0" />
+                        <TextField fx:id="shomare" layoutX="38.0" layoutY="156.0" />
+                        <Button layoutX="432.0" layoutY="255.0" mnemonicParsing="false" onAction="#sabtPersonalInfoBtn" prefHeight="30.0" prefWidth="78.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="shenassnameInfoPane" prefHeight="297.0" prefWidth="529.0" visible="false">
+                     <children>
+                        <Label layoutX="404.0" layoutY="32.0" prefHeight="17.0" prefWidth="95.0" text="شماره شناسنامه" />
+                        <Label layoutX="172.0" layoutY="32.0" prefHeight="17.0" prefWidth="62.0" text="شهر صدور" />
+                        <Label layoutX="413.0" layoutY="86.0" prefHeight="17.0" prefWidth="77.0" text="استان صدور" />
+                        <Label layoutX="172.0" layoutY="86.0" prefHeight="17.0" prefWidth="82.0" text="سوابق خدمت" />
+                        <Label layoutX="400.0" layoutY="132.0" prefHeight="17.0" prefWidth="73.0" text="واحد سازمانی" />
+                        <Label layoutX="173.0" layoutY="132.0" prefHeight="17.0" prefWidth="61.0" text="نوع حکم" />
+                        <TextField fx:id="shomareshenasnameTxt" layoutX="244.0" layoutY="28.0" />
+                        <TextField fx:id="shahreSodor" layoutX="14.0" layoutY="28.0" />
+                        <TextField fx:id="ostanSodor" layoutX="254.0" layoutY="82.0" />
+                        <TextField fx:id="savabegeKhedmatTxt" layoutX="14.0" layoutY="82.0" />
+                        <TextField fx:id="vahedSazmaniTxt" layoutX="244.0" layoutY="128.0" />
+                        <TextField fx:id="noeeHokm" layoutX="14.0" layoutY="128.0" />
+                        <Button layoutX="400.0" layoutY="237.0" mnemonicParsing="false" onAction="#sabteShanasnameInfoBtn" prefHeight="46.0" prefWidth="104.0" text="ثبت" />
+                     </children></AnchorPane>
+                  <Button layoutX="317.0" layoutY="306.0" mnemonicParsing="false" onAction="#newUserClicked" prefHeight="33.0" prefWidth="124.0" text="کاربر جدید" />
+               </children></AnchorPane>
+            <AnchorPane fx:id="deleteUserPart" prefHeight="447.0" prefWidth="529.0" visible="false">
+               <children>
+                  <Label layoutX="439.0" layoutY="49.0" prefHeight="17.0" prefWidth="56.0" text="آیدی :" />
+                  <TextField fx:id="idTxt" layoutX="339.0" layoutY="45.0" prefHeight="25.0" prefWidth="76.0" />
+                  <Button layoutX="84.0" layoutY="45.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="25.0" prefWidth="97.0" text="جستوجو" />
+                  <ListView fx:id="showInfo" layoutX="46.0" layoutY="93.0" prefHeight="48.0" prefWidth="477.0" />
+                  <Button layoutX="104.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="36.0" prefWidth="92.0" text="حذف" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="thirdPart" layoutY="1.0" prefHeight="445.0" prefWidth="530.0" visible="false">
+               <children>
+                  <Label layoutX="413.0" layoutY="67.0" prefHeight="26.0" prefWidth="117.0" text="افزایش ضریب حقوق" />
+                  <TextField fx:id="afzayeshZaribTxt" layoutX="250.0" layoutY="68.0" prefHeight="25.0" prefWidth="146.0" />
+                  <Button layoutX="325.0" layoutY="236.0" mnemonicParsing="false" onAction="#AfzayeshZaribClicked" prefHeight="44.0" prefWidth="177.0" text="اعمال و افزایش حقوق کارمندان" />
+                  <Label layoutX="442.0" layoutY="126.0" prefHeight="17.0" prefWidth="60.0" text="تاریخ" />
+                  <TextField fx:id="tarikhZarizTxt" layoutX="251.0" layoutY="122.0" />
+                  <Label fx:id="showCurrentZarib" layoutX="83.0" layoutY="72.0" prefHeight="17.0" prefWidth="124.0" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </right>
+   <left>
+      <HBox prefHeight="446.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="446.0" prefWidth="95.0" style="-fx-background-color: #EDC6B7;">
+               <children>
+                  <Button fx:id="firstBtn" mnemonicParsing="false" prefHeight="91.0" prefWidth="34.0" style="-fx-background-color: #EDC6B7; -fx-background-radius: 0;" />
+                  <Button fx:id="secondBtn" mnemonicParsing="false" prefHeight="84.0" prefWidth="34.0" style="-fx-background-color: #EDC6B7; -fx-background-radius: 0;">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="thirdBtn" mnemonicParsing="false" prefHeight="83.0" prefWidth="34.0" style="-fx-background-color: #EDC6B7; -fx-background-radius: 0;">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="fourthBtn" mnemonicParsing="false" prefHeight="85.0" prefWidth="34.0" style="-fx-background-color: #EDC6B7; -fx-background-radius: 0;">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children></VBox>
+            <VBox prefHeight="446.0" prefWidth="201.0" style="-fx-background-color: #EDC6B7;">
+               <children>
+                  <Button fx:id="avalinBtn" mnemonicParsing="false" onAction="#buttonOneClicked" prefHeight="91.0" prefWidth="150.0" style="-fx-background-color: #E5C149; -fx-background-radius: 0;" text="ثبت کاربر جدید" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="dovominBtn" mnemonicParsing="false" onAction="#buttonTwoClicked" prefHeight="83.0" prefWidth="140.0" style="-fx-background-color: #3ED0C3; -fx-background-radius: 0;" text="حذف کاربر" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="sevominBtn" mnemonicParsing="false" onAction="#buttonThreeClicked" prefHeight="84.0" prefWidth="140.0" style="-fx-background-color: #DA7EE3; -fx-background-radius: 0;" text="افزایش حقوق و ضریب" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="chaharominBtn" mnemonicParsing="false" onAction="#buttonFourClicked" prefHeight="84.0" prefWidth="140.0" style="-fx-background-color: #D9649B; -fx-background-radius: 0;" text="اطلاعات بیشتر" textFill="WHITE" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>
